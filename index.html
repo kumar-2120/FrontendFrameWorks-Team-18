@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Value-Added Products Support</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌾 Farmer Value-Added Products Support</h1>
+            <p class="subtitle">Transform your raw products into profitable value-added goods</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-section">
+            <h2>Welcome Farmers!</h2>
+            <p>This tool helps you understand how to convert your raw agricultural products into value-added products, increasing your profit margins and market opportunities.</p>
+        </section>
+
+        <section class="calculator-section">
+            <h2>Product Conversion Calculator</h2>
+            <div class="form-group">
+                <label for="raw-product">Select Raw Product:</label>
+                <select id="raw-product" onchange="updateConversionOptions()">
+                    <option value="">-- Select a product --</option>
+                    <option value="milk">Milk</option>
+                    <option value="fruits">Fruits (Berries, Mangoes, etc.)</option>
+                    <option value="vegetables">Vegetables (Tomatoes, Peppers, etc.)</option>
+                    <option value="grains">Grains (Wheat, Rice, etc.)</option>
+                    <option value="honey">Honey</option>
+                    <option value="herbs">Herbs & Spices</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="conversion-options" style="display: none;">
+                <label for="value-added-product">Convert to:</label>
+                <select id="value-added-product" onchange="updateCalculation()">
+                    <option value="">-- Select conversion --</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="quantity-input" style="display: none;">
+                <label for="quantity">Quantity of Raw Product:</label>
+                <input type="number" id="quantity" min="1" step="0.1" placeholder="Enter quantity" onchange="updateCalculation()">
+                <span id="unit-label"></span>
+            </div>
+
+            <div id="results" style="display: none;">
+                <h3>Conversion Results</h3>
+                <div class="result-card">
+                    <div class="result-item">
+                        <span class="label">Raw Product:</span>
+                        <span id="raw-amount" class="value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Value-Added Product:</span>
+                        <span id="value-added-amount" class="value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Estimated Revenue Increase:</span>
+                        <span id="revenue-increase" class="value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Processing Time:</span>
+                        <span id="processing-time" class="value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Equipment Needed:</span>
+                        <span id="equipment" class="value"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Popular Conversion Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>🥛 Milk to Cheese</h3>
+                    <p><strong>Conversion Rate:</strong> 10L milk → 1kg cheese</p>
+                    <p><strong>Value Increase:</strong> 300-400%</p>
+                    <p><strong>Shelf Life:</strong> Extended to months</p>
+                </div>
+                <div class="example-card">
+                    <h3>🍓 Fruits to Jam</h3>
+                    <p><strong>Conversion Rate:</strong> 1kg fruit → 1.2kg jam</p>
+                    <p><strong>Value Increase:</strong> 200-300%</p>
+                    <p><strong>Shelf Life:</strong> Up to 1 year</p>
+                </div>
+                <div class="example-card">
+                    <h3>🍅 Tomatoes to Sauce</h3>
+                    <p><strong>Conversion Rate:</strong> 3kg tomatoes → 1L sauce</p>
+                    <p><strong>Value Increase:</strong> 250-350%</p>
+                    <p><strong>Shelf Life:</strong> 6-12 months</p>
+                </div>
+                <div class="example-card">
+                    <h3>🌾 Wheat to Flour</h3>
+                    <p><strong>Conversion Rate:</strong> 1kg wheat → 0.75kg flour</p>
+                    <p><strong>Value Increase:</strong> 150-200%</p>
+                    <p><strong>Shelf Life:</strong> 6-12 months</p>
+                </div>
+                <div class="example-card">
+                    <h3>🥛 Milk to Yogurt</h3>
+                    <p><strong>Conversion Rate:</strong> 1L milk → 1L yogurt</p>
+                    <p><strong>Value Increase:</strong> 200-250%</p>
+                    <p><strong>Shelf Life:</strong> 2-3 weeks</p>
+                </div>
+                <div class="example-card">
+                    <h3>🌿 Herbs to Dried Herbs</h3>
+                    <p><strong>Conversion Rate:</strong> 4kg fresh → 1kg dried</p>
+                    <p><strong>Value Increase:</strong> 400-500%</p>
+                    <p><strong>Shelf Life:</strong> 1-2 years</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Benefits of Value-Added Products</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="icon">💰</span>
+                    <h3>Higher Profit Margins</h3>
+                    <p>Increase your revenue by 150-500% compared to selling raw products</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="icon">📦</span>
+                    <h3>Extended Shelf Life</h3>
+                    <p>Reduce waste and sell products year-round</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="icon">🎯</span>
+                    <h3>Market Differentiation</h3>
+                    <p>Stand out with unique, branded products</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="icon">🌍</span>
+                    <h3>Wider Market Reach</h3>
+                    <p>Access retail and online markets with packaged goods</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <h2>Getting Started Tips</h2>
+            <ul class="tips-list">
+                <li>Start small with one product conversion to test the market</li>
+                <li>Ensure you meet all local food safety and licensing requirements</li>
+                <li>Invest in quality packaging to enhance product appeal</li>
+                <li>Research your target market and pricing strategies</li>
+                <li>Consider forming cooperatives with other farmers for shared equipment</li>
+                <li>Develop a strong brand identity for your products</li>
+                <li>Explore online sales channels and farmers' markets</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Farmer Value-Added Products Support. Empowering farmers to maximize their potential.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
